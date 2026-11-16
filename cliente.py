@@ -55,6 +55,8 @@ class Cliente(Entidad):
         except (ValueError, TypeError) as error:
             # Encadenamiento de excepciones: conserva la causa original
             raise DatoInvalidoError("El teléfono debe ser numérico.") from error
+        if not str(valor).isdigit():
+            raise DatoInvalidoError("El telefono solo debe tener digitos")
         if len(str(valor)) != 10:
             raise DatoInvalidoError("El teléfono debe tener 10 dígitos.")
         self.__telefono = str(valor)
