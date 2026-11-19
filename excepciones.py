@@ -11,3 +11,15 @@ class ParametroFaltanteError(ErrorSoftwareFJ):
 
 class OperacionNoPermitidaError(ErrorSoftwareFJ):
     """Se lanza cuando se intenta una operación no válida."""
+
+class ReservaError(ErrorSoftwareFJ):
+    """Se lanza cuando una reserva no se puede procesar."""
+
+class ServicioNoDisponibleError(ErrorSoftwareFJ):
+    """Se lanza cuando el servicio no está disponible."""
+
+class CalculoInconsistenteError(ErrorSoftwareFJ):
+    """Se lanza cuando el cálculo del costo es inválido."""
+
+# Alias: así Reserva y Cliente usan la misma clase de error
+DatosInvalidosError = DatoInvalidoError
