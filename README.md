@@ -6,6 +6,9 @@ Integrantes:
 entidad.py - cliente.py
 
 2 Juan Diego Seña Madera - escogí parte 4 - sistema_logs.py - gestor_general.py
+ 
+3 Ronald de Hoyos Hoyos - escogí parte 3-
+Clase_Reserva 
 
 Parte que le toca a cada integrante
     1.  Excepciones, clase abstracta base y Cliente
@@ -13,3 +16,5 @@ Parte que le toca a cada integrante
 	3.	Clase Reserva
 	4.	Sistema de logs y gestor general
 	5.	main.py con las 10+ operaciones, README y PDF
+
+1 
