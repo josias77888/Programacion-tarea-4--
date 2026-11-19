@@ -5,6 +5,7 @@ Integrantes:
 1 Josias Madera Martínez - escogi parte 1 - excepciones.py - 
 entidad.py - cliente.py
 
+2 Juan Diego Seña Madera - escogí parte 4 - sistema_logs.py - gestor_general.py
 
 Parte que le toca a cada integrante
     1.  Excepciones, clase abstracta base y Cliente
