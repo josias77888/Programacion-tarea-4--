@@ -10,6 +10,20 @@ class Cliente(Entidad):
     """Cliente con datos personales encapsulados y validaciones estrictas."""
 
     def __init__(self, identificador, nombre, correo, telefono):
+        if identificador is None:
+            raise ParametroFaltanteError("El identificador es obligatorio.")
+        if isinstance(identificador, bool):
+            raise DatoInvalidoError("El identificador no puede ser booleano.")
+        if isinstance(identificador, int):
+            if identificador <= 0:
+                raise DatoInvalidoError("El identificador debe ser mayor que cero.")
+        elif isinstance(identificador, str):
+            if identificador.strip() == "":
+                raise ParametroFaltanteError("El identificador es obligatorio.")
+            identificador = identificador.strip()
+        else:
+            raise DatoInvalidoError("El identificador debe ser texto o un número entero.")
+
         super().__init__(identificador)  # Inicializa la clase padre
         # Se asigna mediante los setters para que se validen los datos
         self.nombre = nombre
@@ -23,8 +37,10 @@ class Cliente(Entidad):
 
     @nombre.setter
     def nombre(self, valor):
-        if valor is None or str(valor).strip() == "":
+        if valor is None or (isinstance(valor, str) and valor.strip() == ""):
             raise ParametroFaltanteError("El nombre es obligatorio.")
+        if not isinstance(valor, str):
+            raise DatoInvalidoError("El nombre debe ser texto.")
         if len(valor.strip()) < 3:
             raise DatoInvalidoError("El nombre debe tener al menos 3 caracteres.")
         self.__nombre = valor.strip()
@@ -36,10 +52,14 @@ class Cliente(Entidad):
 
     @correo.setter
     def correo(self, valor):
-        if not valor:
+        if valor is None or (isinstance(valor, str) and valor.strip() == ""):
             raise ParametroFaltanteError("El correo es obligatorio.")
-        patron = r"^[\w\.-]+@[\w\.-]+\.\w+$"  # Formato básico de correo
-        if not re.match(patron, valor):
+        if not isinstance(valor, str):
+            raise DatoInvalidoError("El correo debe ser texto.")
+
+        valor = valor.strip()
+        patron = r"^[\w.-]+@[\w.-]+\.\w+$"  # Formato básico de correo
+        if not re.fullmatch(patron, valor):
             raise DatoInvalidoError(f"Correo inválido: {valor}")
         self.__correo = valor
 
