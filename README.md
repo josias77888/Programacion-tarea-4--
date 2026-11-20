@@ -17,4 +17,3 @@ Parte que le toca a cada integrante
 	4.	Sistema de logs y gestor general
 	5.	main.py con las 10+ operaciones, README y PDF
 
-1 
