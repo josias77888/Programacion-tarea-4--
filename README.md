@@ -62,22 +62,12 @@ Todo lo que ocurre queda registrado en el archivo `logs/sistema.log`.
 - **Métodos sobrecargados:** el costo se puede calcular solo, con impuesto, con descuento o con ambos.
 - **Manejo de excepciones:** errores personalizados, `try/except`, `try/except/else`, `try/except/finally` y encadenamiento de excepciones.
 
-Integrantes:
+## Integrantes y partes
 
-1 Josías Madera Martínez - escogi parte 1 - excepciones.py - 
-entidad.py - cliente.py - main.py
-
-2 Juan Diego Seña Madera - escogí parte 4 - sistema_logs.py - gestor_general.py
- 
-3 Ronald de Hoyos Hoyos - escogí parte 3-
-Clase_Reserva 
-
-4 Salome Infante Quiñonez - escogi parte 2 - servicio.py - PDF
-
-Parte que le toca a cada integrante
-    1.  Excepciones, clase abstracta base y Cliente
-	2.	Clase abstracta Servicio y servicios (salas, equipos, asesorías)
-	3.	Clase Reserva
-	4.	Sistema de logs y gestor general
-	5.	main.py con las 10+ operaciones, README y PDF
+| Integrante | Parte | Archivos |
+|---|---|---|
+| Josías Madera Martínez | 1. Excepciones, clase abstracta base y Cliente. Además, `main.py` y README | `excepciones.py`, `entidad.py`, `cliente.py`, `main.py`, `README.md` |
+| Salome Infante Quiñonez | 2. Clase abstracta Servicio y servicios (salas, equipos, asesorías). Además, el PDF final | `servicio.py`, PDF |
+| Ronald de Hoyos Hoyos | 3. Clase Reserva | `reserva.py` |
+| Juan Diego Seña Madera | 4. Sistema de logs y gestor general | `sistema_logs.py`, `gestor_general.py` |
 
