@@ -1,6 +1,6 @@
 # Archivo     : main.py
 # Proyecto    : Software FJ
-# Descripcion : Simulacion de 20 operaciones del sistema (validas e invalidas).
+# Descripcion : Simulacion de 22 operaciones del sistema (validas e invalidas).
 #               El programa nunca se detiene: cada error se controla y se registra en el log.
 
 from sistema_logs import SistemaLogs                          # Parte 4: configura el archivo de logs
@@ -141,6 +141,13 @@ def main():
                 f"ambos: ${sala.cotizar(2, 0.19, 0.10):,.0f}")
     ejecutar(logs, 19, "Costos con metodos sobrecargados", op19)
 
+    # ---------------- PARAMETROS FALTANTES ----------------
+    ejecutar(logs, 20, "Cliente sin nombre (parametro faltante)",
+             lambda: gestor.registrar_cliente(Cliente(6, "", "sin.nombre@correo.com", "3001234567")))
+
+    ejecutar(logs, 21, "Servicio sin tipo de equipo (parametro faltante)",
+             lambda: gestor.registrar_servicio(AlquilerEquipo(5, "Cámara", 9000, "")))
+
     # ---------------- RESUMEN ----------------
     def op20():
         resumen = gestor.generar_resumen()
@@ -148,7 +155,7 @@ def main():
         for reserva in gestor.consultar_reservas():
             print(f"   - {reserva}")
         return resumen
-    ejecutar(logs, 20, "Resumen general del sistema", op20)
+    ejecutar(logs, 22, "Resumen general del sistema", op20)
 
     print("\n=== SIMULACION FINALIZADA: el programa no se detuvo ===")
     print("Revisa los eventos y errores en el archivo: logs/sistema.log")
