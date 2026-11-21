@@ -35,9 +35,12 @@ Nunca se detiene.
 ¿Cómo se ejecuta?
 
 Se necesita tener Python 3. Desde la carpeta del proyecto:
+```bash
 python3 main.py
+```
+Todo lo que ocurre queda registrado en el archivo `logs/sistema.log`.
 
-	Archivos del proyecto
+## Archivos del proyecto
 
 | Archivo | Qué contiene |
 |---|---|
